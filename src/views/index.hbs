@@ -1,0 +1,106 @@
+<div class='card mx-auto my-auto w-75'>
+  <div class='card-header'>
+    <h4 class='my-auto'>Random Password Generator
+      <i class='fa-solid fa-key'></i></h4>
+  </div>
+  <div class='card-body'>
+    <form action='/generate-password' method='post'>
+      <div class='mb-3 row'>
+        <label for='passwordLength' class='col-sm-4 col-form-label'>Password
+          Length</label>
+        <div class='col-sm-8'>
+          <input
+            type='number'
+            class='form-control'
+            id='passwordLength'
+            name='passwordLength'
+            aria-describedby='passwordHelp'
+            min='4'
+            max='16'
+            value='{{params.passwordLength}}'
+          />
+          <small id='passwordHelp' class='form-text'>Length is available between
+            4 ~ 16</small>
+        </div>
+      </div>
+      <div class='mb-3 row'>
+        <label class='col-sm-4 col-form-label'>Include Lowercase Characters</label>
+        <div class='my-auto col-sm-8 form-check'>
+          <input
+            type='checkbox'
+            class='form-check-input'
+            name='lowercase'
+            id='lowercase'
+            {{params.lowercase}}
+          />
+          <label class='form-check-label' for='lowercase'>(e.g. abcdefg)</label>
+        </div>
+      </div>
+      <div class='my-3 row'>
+        <label class='col-sm-4 col-form-label'>Include Uppercase Characters</label>
+        <div class='my-auto col-sm-8 form-check'>
+          <input
+            type='checkbox'
+            class='form-check-input'
+            name='uppercase'
+            id='uppercase'
+            {{params.uppercase}}
+          />
+          <label class='form-check-label' for='uppercase'>(e.g. ABCDEFG)</label>
+        </div>
+      </div>
+      <div class='mb-3 row'>
+        <label class='col-sm-4 col-form-label'>Include Numbers</label>
+        <div class='my-auto col-sm-8 form-check'>
+          <input
+            type='checkbox'
+            class='form-check-input'
+            name='includeNumbers'
+            id='includeNumbers'
+            {{params.includeNumbers}}
+          />
+          <label class='form-check-label' for='includeNumbers'>(e.g. 123456)</label>
+        </div>
+      </div>
+      <div class='mb-3 row'>
+        <label class='col-sm-4 col-form-label'>Include Symbols</label>
+        <div class='my-auto col-sm-8 form-check'>
+          <input
+            type='checkbox'
+            class='form-check-input'
+            name='includeSymbols'
+            id='includeSymbols'
+            {{params.includeSymbols}}
+          />
+          <label class='form-check-label' for='includeSymbols'>(e.g. @#$%)</label>
+        </div>
+      </div>
+      <div class='mb-3 row'>
+        <label for='excludeCharacters' class='col-sm-4 col-form-label'>Exclude
+          Characters</label>
+        <div class='col-sm-8'>
+          <input
+            type='text'
+            class='form-control'
+            id='excludeCharacters'
+            name='excludeCharacters'
+            aria-describedby='excludeCharHelp'
+            value='{{params.excludeCharacters}}'
+          />
+          <small id='excludeCharHelp' class='form-text'>These characters will
+            not appear in the password</small>
+        </div>
+      </div>
+      <div class='alert alert-info' role='alert'>
+        Your password is:
+        <span class='text-danger'>{{message}}</span>
+      </div>
+      <button id='submitBtn' class='btn btn-success'>Generate</button>
+    </form>
+  </div>
+  <div class='card-footer text-end'>
+    <h5>Idea is inspired by
+      <a href='#' class='text-decoration-none'>Strong Random Password</a>
+    </h5>
+  </div>
+</div>

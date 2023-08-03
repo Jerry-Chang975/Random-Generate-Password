@@ -1,0 +1,11 @@
+main {
+  height: 100%;
+}
+
+div.form-check {
+  padding: 0 2rem;
+}
+
+div.card-body {
+  background-color: rgb(245, 245, 245);
+}
