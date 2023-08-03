@@ -22,6 +22,14 @@ export function generatePassword(req, res) {
   req.body.excludeCharacters.split('').forEach((char) => {
     randomSet = randomSet.replace(char, '');
   });
+
+  // check if the result of user password condition is empty
+  if (!randomSet) {
+    return res.render('index', {
+      message: 'There is no characters to generate password.',
+    });
+  }
+
   for (let i = 0; i < req.body.passwordLength; i++) {
     password += randomSet[Math.floor(Math.random() * randomSet.length)];
   }
