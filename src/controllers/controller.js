@@ -15,6 +15,7 @@ export function generatePassword(req, res) {
   if (!randomSet) {
     return res.render('index', {
       message: 'Please select at least one character set',
+      params: { passwordLength: req.body.passwordLength },
     });
   }
 
@@ -27,6 +28,7 @@ export function generatePassword(req, res) {
   if (!randomSet) {
     return res.render('index', {
       message: 'There is no characters to generate password.',
+      params: { passwordLength: req.body.passwordLength },
     });
   }
 
@@ -38,10 +40,10 @@ export function generatePassword(req, res) {
     message: password,
     params: {
       passwordLength: req.body.passwordLength,
-      lowercase: req.body.lowercase ? 'checked' : '',
-      uppercase: req.body.uppercase ? 'checked' : '',
-      includeNumbers: req.body.includeNumbers ? 'checked' : '',
-      includeSymbols: req.body.includeSymbols ? 'checked' : '',
+      lowercase: req.body.lowercase,
+      uppercase: req.body.uppercase,
+      includeNumbers: req.body.includeNumbers,
+      includeSymbols: req.body.includeSymbols,
       excludeCharacters: req.body.excludeCharacters,
     },
   });

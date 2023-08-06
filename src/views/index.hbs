@@ -31,7 +31,7 @@
             class='form-check-input'
             name='lowercase'
             id='lowercase'
-            {{params.lowercase}}
+            {{#if params.lowercase}}checked{{/if}}
           />
           <label class='form-check-label' for='lowercase'>(e.g. abcdefg)</label>
         </div>
@@ -44,7 +44,7 @@
             class='form-check-input'
             name='uppercase'
             id='uppercase'
-            {{params.uppercase}}
+            {{#if params.uppercase}}checked{{/if}}
           />
           <label class='form-check-label' for='uppercase'>(e.g. ABCDEFG)</label>
         </div>
@@ -57,7 +57,7 @@
             class='form-check-input'
             name='includeNumbers'
             id='includeNumbers'
-            {{params.includeNumbers}}
+            {{#if params.includeNumbers}}checked{{/if}}
           />
           <label class='form-check-label' for='includeNumbers'>(e.g. 123456)</label>
         </div>
@@ -70,7 +70,7 @@
             class='form-check-input'
             name='includeSymbols'
             id='includeSymbols'
-            {{params.includeSymbols}}
+            {{#if params.includeSymbols}}checked{{/if}}
           />
           <label class='form-check-label' for='includeSymbols'>(e.g. @#$%)</label>
         </div>
