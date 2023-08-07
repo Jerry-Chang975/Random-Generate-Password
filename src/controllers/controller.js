@@ -28,7 +28,14 @@ export function generatePassword(req, res) {
   if (!randomSet) {
     return res.render('index', {
       message: 'There is no characters to generate password.',
-      params: { passwordLength: req.body.passwordLength },
+      params: {
+        passwordLength: req.body.passwordLength,
+        lowercase: req.body.lowercase,
+        uppercase: req.body.uppercase,
+        includeNumbers: req.body.includeNumbers,
+        includeSymbols: req.body.includeSymbols,
+        excludeCharacters: req.body.excludeCharacters,
+      },
     });
   }
 
